@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>updateFactura</title>
+</head>
+<body>
+<div>
+  <form action="#" th:action="@{/practica/saveFactura(update=${intupdate})}" th:object="${tablaFacturas}" method="post">
+    <p th:if="${update}"><label>Id:</label><input type="text" th:field="*{idFactura}" readonly></p>
+    <p><label>Descripcion:</label><input type="text" th:field="*{descripcion}"></p>
+    <p><label>Importe:</label><input type="text" th:field="*{importe}"></p>
+    <p><label>Pagado:</label><input type="text" th:field="*{pagado}"></p>
+    <input type="submit" value="Submit" />
+  </form>
+</div>
+<div th:if="${error}">
+
+        <p th:text="${error}"></p>
+
+</div>
+</body>
+</html>
